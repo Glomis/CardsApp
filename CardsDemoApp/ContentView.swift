@@ -15,15 +15,15 @@ struct ContentView: View {
             CardView(cardName: "Card name",
                      discription: "Discription",
                      image: "Certificate1",
-                     color: Color.red
+                     color: Color("background10")
             )
             .offset(y: -40)
             .scaleEffect(0.94)
-
+            
             CardView(cardName: "Card name",
                      discription: "Disc",
                      image: "Certificate3",
-                     color: Color.blue
+                     color: Color("background8")
             )
             .offset(y: -20)
             .scaleEffect(0.97)
@@ -35,6 +35,7 @@ struct ContentView: View {
             )
 //            .rotationEffect(Angle(degrees: 10))
             
+            BottomCertificate()
         }
     }
 }
@@ -44,6 +45,8 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
 
 
 //MARK: TitlView
@@ -59,8 +62,8 @@ struct TitleView: View {
             }
             
             Image("Illustration5")
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
+            //                .resizable()
+            //                .aspectRatio(contentMode: .fit)
             Spacer()
         }
         .padding(.bottom)
@@ -101,5 +104,25 @@ struct CardView: View {
         .background(color)
         .cornerRadius(20)
         .shadow(radius: 20)
+    }
+}
+
+//MARK: Bottom Certificate View
+struct BottomCertificate: View {
+    var body: some View {
+        VStack(spacing: 20) {
+            Rectangle()
+                .frame(width: 70, height: 8)
+                .cornerRadius(10)
+                .opacity(0.1)
+            Text("Сертификат о проделанной работе и успешно выполенном задании.")
+            Spacer()
+        }
+        .frame(minWidth: 0, maxWidth: .infinity)
+        .padding()
+        .background(Color.white)
+        .cornerRadius(30)
+        .shadow(radius: 20)
+        .offset(y: 600)
     }
 }
