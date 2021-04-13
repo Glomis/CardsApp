@@ -8,34 +8,49 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var tap = false
     var body: some View {
         ZStack {
             TitleView()
+                .blur(radius: tap ? 10 : 0)
+            
             
             CardView(cardName: "Card name",
                      discription: "Discription",
                      image: "Certificate1",
                      color: Color("background10")
             )
-            .offset(y: -40)
+            .offset(y: tap ? -200 : -40)
             .scaleEffect(0.94)
+            .rotationEffect(Angle(degrees: tap ? 20 : 0))
+            
             
             CardView(cardName: "Card name",
                      discription: "Disc",
                      image: "Certificate3",
                      color: Color("background8")
             )
-            .offset(y: -20)
+            .offset(y: tap ? -100 : -20)
             .scaleEffect(0.97)
+            .rotationEffect(Angle(degrees: tap ? 15 : 0))
+            
             
             CardView(cardName: "Card name",
                      discription: "Discription",
                      image: "Background",
                      color: Color.black
             )
-//            .rotationEffect(Angle(degrees: 10))
+            .rotationEffect(Angle(degrees: tap ? 10 : 0))
+            .onTapGesture {
+                withAnimation(.spring()) {
+                    tap.toggle()
+                }
+            }
             
+// Добавить перетаскивание объектов
             BottomCertificate()
+                .blur(radius: tap ? 10 : 0)
         }
     }
 }
