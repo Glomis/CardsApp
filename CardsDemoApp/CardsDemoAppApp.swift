@@ -2,7 +2,7 @@
 //  CardsDemoAppApp.swift
 //  CardsDemoApp
 //
-//  Created by Tatyana on 12.04.2021.
+//  Created by Max on 12.04.2021.
 //
 
 import SwiftUI
