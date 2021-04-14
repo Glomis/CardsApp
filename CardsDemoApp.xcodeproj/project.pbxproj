@@ -12,6 +12,7 @@
 		49489AFC2624BACC0065E32B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49489AFB2624BACC0065E32B /* Assets.xcassets */; };
 		49489AFF2624BACC0065E32B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49489AFE2624BACC0065E32B /* Preview Assets.xcassets */; };
 		49B0E9AE2626355600A0FD22 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0E9AD2626355600A0FD22 /* SideMenuView.swift */; };
+		49D6B0D926277A9300088E64 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6B0D826277A9300088E64 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		49489AFE2624BACC0065E32B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		49489B002624BACC0065E32B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49B0E9AD2626355600A0FD22 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		49D6B0D826277A9300088E64 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				49489AF72624BAC60065E32B /* CardsDemoAppApp.swift */,
 				49489AF92624BAC60065E32B /* ContentView.swift */,
+				49D6B0D826277A9300088E64 /* HomeView.swift */,
 				49B0E9AD2626355600A0FD22 /* SideMenuView.swift */,
 				49489AFB2624BACC0065E32B /* Assets.xcassets */,
 				49489B002624BACC0065E32B /* Info.plist */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49B0E9AE2626355600A0FD22 /* SideMenuView.swift in Sources */,
+				49D6B0D926277A9300088E64 /* HomeView.swift in Sources */,
 				49489AFA2624BAC60065E32B /* ContentView.swift in Sources */,
 				49489AF82624BAC60065E32B /* CardsDemoAppApp.swift in Sources */,
 			);
