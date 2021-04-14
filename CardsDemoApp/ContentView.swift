@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  CardsDemoApp
 //
-//  Created by Tatyana on 12.04.2021.
+//  Created by Max on 12.04.2021.
 //
 
 import SwiftUI
@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var tap = false
+    
     var body: some View {
         ZStack {
             TitleView()
@@ -48,7 +49,7 @@ struct ContentView: View {
                 }
             }
             
-// Добавить перетаскивание объектов
+            // Добавить перетаскивание объектов
             BottomCertificate()
                 .blur(radius: tap ? 10 : 0)
         }
