@@ -16,23 +16,25 @@ struct HomeView: View {
     
     var body: some View {
         ZStack(alignment: .top) {
+            ContentView()
+                .background(Color.white)
+                .cornerRadius(30)
+                .shadow(radius: 20)
+                .animation(.spring())
+                .offset(y: showProfile ? 0 : UIScreen.main.bounds.height)
+            
             HStack(spacing: 15) {
                 CapsuleButton(showSideMenu: $showMenu)
+                    .offset(y: showProfile ? 50 : 0)
+                    .animation(.default)
                 Spacer()
-                CircleButton(imageName: "person.crop.circle", show: $showProfile)
-//                    .sheet(isPresented: $showProfile, content: {
-//                        ContentView()
-//                    })
-                    
                 
+                CircleButton(imageName: "person.crop.circle", show: $showProfile)
                 
                 CircleButton(imageName: "bell", show: $showBell)
                     .padding(.trailing, 20)
                     .padding(.vertical)
             }
-//            ContentView()
-//                .offset(y: showProfile ? 0 : UIScreen.main.bounds.height)
-//                .animation(.default)
             
             SideMenuView(showMenu: $showMenu)
         }
