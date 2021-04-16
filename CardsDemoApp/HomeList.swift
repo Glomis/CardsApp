@@ -9,21 +9,43 @@ import SwiftUI
 
 struct HomeList: View {
     var courses = coursesData
+    @State var press = false
     
     var body: some View {
         
         
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 20) {
-                    ForEach(courses) { course in
-                        CourseView(name: course.tittle,
-                                   image: course.image,
-                                   color: course.color,
-                                   shadowColor: course.shadowColor)
-                    }
+        VStack {
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Courses")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                    Text("22 lessons")
+                        .foregroundColor(.gray)
+                }
+                .padding(.leading, 65)
+                .padding(.top, 10)
+                
+                Spacer()
             }
-            .padding()
-            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 20) {
+                        ForEach(courses) { course in
+                            Button(action: {press.toggle()} ) {
+                                CourseView(name: course.tittle,
+                                           image: course.image,
+                                           color: course.color,
+                                       shadowColor: course.shadowColor)
+                            }
+                            .sheet(isPresented: $press, content: {
+                                ContentView()
+                            })
+                        }
+                }
+                .padding(20)
+                .padding(.vertical)
+                
+            }
         }
         
 //        .padding(.leading, 20)
@@ -52,7 +74,8 @@ struct CourseView: View {
                 .foregroundColor(.white)
                 .lineLimit(3)
                 .padding()
-                .frame(width: 150)
+                .padding(.leading, 20)
+                .frame(width: 170)
             Spacer()
             Image(image)
                 .resizable()

@@ -16,6 +16,12 @@ struct HomeView: View {
     
     var body: some View {
         ZStack(alignment: .top) {
+            HomeList()
+                .blur(radius: showMenu ? 20 : 0)
+                .scaleEffect(showProfile ? 0.95 : 1)
+                .animation(.default)
+                
+    
             ContentView()
                 .background(Color.white)
                 .cornerRadius(30)
@@ -32,7 +38,7 @@ struct HomeView: View {
                 CircleButton(imageName: "person.crop.circle", show: $showProfile)
                 
                 CircleButton(imageName: "bell", show: $showBell)
-                    .padding(.trailing, 20)
+                    .padding(.trailing, 10)
                     .padding(.vertical)
             }
             
@@ -78,7 +84,7 @@ struct CapsuleButton: View {
             .frame(width: 90, height: 60)
             .background(Color.white)
             .cornerRadius(30)
-            .offset(x: -15)
+            .offset(x: -35)
             .shadow(color: Color("buttonShadow"), radius: 10, x: 0, y: 10)
         }
     }
